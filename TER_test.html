@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test</title>
+<style>
+    p {
+        text-align: center;
+        font-size: 32px;
+        }
+
+    .container { 
+        height: 200px;
+        position: relative;
+        border: 3px solid rgb(80, 39, 196); 
+        }
+
+    .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        }
+    a {
+        font-size: large;
+        color : hotpink;
+    }
+</style>&
+
+</head>
+<body>
+    
+    <a href="TER_expe.html"> Main Menu</a>
+
+
+    <div class="container">
+        <div class="center">
+            <p id="myText"></p>
+            <button type="button" id="myBtn">Press to show the next syllable</button>
+        </div>
+      </div>
+
+
+    
+    <a href="TER_app.html">Retour vers l'apprentissage</a>
+
+
+
+    <script>
+        var liste = ["laj","keun","loum","feup","zés","til","vip","pér","sunj","vod","tur","chouf","baïg","kar","chib","tenb","jéch","munb","lém","doub","paz","chenn"]; //Changer la liste par la liste de syllabes qu'on veut travailler. Je ne sais pas encore comment l'importer d'un fichier txt
+        var text = document.getElementById("myText");
+        var btn = document.getElementById("myBtn");
+
+        btn.addEventListener("click", changeText);
+
+
+        function changeText(){
+            var searchTerm =  text.innerHTML;
+            var index=liste.indexOf(searchTerm)+1;
+            if(index == liste.length )index=0;
+                var result=liste[index];
+                text.innerHTML = result;
+                return;
+            }
+
+
+    </script>
+</body>

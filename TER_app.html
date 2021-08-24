@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Apprentissage</title>
+<style>
+    p {
+        text-align: center;
+        font-size: 32px;
+        }
+
+    .container { 
+        height: 200px;
+        position: relative;
+        border: 3px solid rgb(22, 206, 46); 
+        }
+
+    .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        }
+    a {
+        font-size: large;
+        color : hotpink;
+    }
+</style>
+
+</head>
+<body>
+
+
+    <a href="TER_expe.html"> Main Menu</a>
+
+
+    <div class="container">
+        <div class="center">
+            <p id="myText"></p>
+            <button type="button" id="myBtn">Press to start showing syllabes</button>
+        </div>
+      </div>
+
+
+    <a href="TER_test.html">Vers le test</a>
+
+
+
+    <script>
+        var liste = ["laj","","keun","","loum","","feup","","zés","","til","","vip","","pér","","sunj","","vod","","tur","","chouf","","baïg","","kar","","chib","","tenb","","jéch","","munb","","lém","","doub","","paz","","chenn"];
+        var text = document.getElementById("myText");
+        var btn = document.getElementById("myBtn");
+
+        var i;
+        btn.addEventListener("click", ()=>{
+            i=0;
+            showsyll(liste);
+        });
+        function showsyll(arr) {
+            if (i < arr.length) {
+                text.innerHTML= arr[i];
+                i+=1;
+                setTimeout(()=>{
+                    showsyll(arr);
+                }, 1000);
+            }
+            else {
+                return
+            }
+        }
+    </script>
+
+</body>
